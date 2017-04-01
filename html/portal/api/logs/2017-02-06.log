@@ -1,0 +1,378 @@
+ERROR - 2017-02-06T18:25:34-05:00 - exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'my`-`table.active' in 'where clause'' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:239
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php(239): PDOStatement->execute()
+#1 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#6 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#7 [internal function]: {closure}('my-table')
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#11 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#12 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#13 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#14 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#15 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S22 - 1054 - Unknown column 'my`-`table.active' in 'where clause')' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#6 [internal function]: {closure}('my-table')
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#12 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#13 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#14 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#15 {main}
+
+Next exception 'RuntimeException' with message 'This query failed: SELECT `my-table`.`id` AS `id`, `my-table`.`active` AS `active` FROM `my-table` WHERE `my``-``table`.`active` IN ('1', '2') ORDER BY `id` ASC LIMIT 200 OFFSET 0' in /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php:182
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#3 [internal function]: {closure}('my-table')
+#4 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#6 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#10 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#11 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#12 {main}
+ERROR - 2017-02-06T18:25:56-05:00 - exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'my`-`table.active' in 'where clause'' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:239
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php(239): PDOStatement->execute()
+#1 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#6 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#7 [internal function]: {closure}('my-table')
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#11 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#12 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#13 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#14 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#15 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S22 - 1054 - Unknown column 'my`-`table.active' in 'where clause')' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#6 [internal function]: {closure}('my-table')
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#12 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#13 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#14 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#15 {main}
+
+Next exception 'RuntimeException' with message 'This query failed: SELECT `my-table`.`id` AS `id`, `my-table`.`active` AS `active` FROM `my-table` WHERE `my``-``table`.`active` IN ('1', '2') ORDER BY `id` ASC LIMIT 200 OFFSET 0' in /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php:182
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#3 [internal function]: {closure}('my-table')
+#4 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#6 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#10 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#11 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#12 {main}
+ERROR - 2017-02-06T18:26:01-05:00 - exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'my`-`table.active' in 'where clause'' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:239
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php(239): PDOStatement->execute()
+#1 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#6 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#7 [internal function]: {closure}('my-table')
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#11 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#12 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#13 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#14 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#15 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S22 - 1054 - Unknown column 'my`-`table.active' in 'where clause')' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#6 [internal function]: {closure}('my-table')
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#12 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#13 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#14 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#15 {main}
+
+Next exception 'RuntimeException' with message 'This query failed: SELECT `my-table`.`id` AS `id`, `my-table`.`active` AS `active` FROM `my-table` WHERE `my``-``table`.`active` IN ('1', '2') ORDER BY `id` ASC LIMIT 200 OFFSET 0' in /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php:182
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#3 [internal function]: {closure}('my-table')
+#4 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#6 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#10 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#11 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#12 {main}
+ERROR - 2017-02-06T18:26:21-05:00 - exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'my`-`table.active' in 'where clause'' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:239
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php(239): PDOStatement->execute()
+#1 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#6 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#7 [internal function]: {closure}('my-table')
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#11 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#12 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#13 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#14 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#15 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S22 - 1054 - Unknown column 'my`-`table.active' in 'where clause')' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#6 [internal function]: {closure}('my-table')
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#12 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#13 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#14 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#15 {main}
+
+Next exception 'RuntimeException' with message 'This query failed: SELECT `my-table`.`id` AS `id`, `my-table`.`active` AS `active`, `my-table`.`first_name` AS `first_name` FROM `my-table` WHERE `my``-``table`.`active` IN ('1', '2') ORDER BY `id` ASC LIMIT 200 OFFSET 0' in /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php:182
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#3 [internal function]: {closure}('my-table')
+#4 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#6 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#10 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#11 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#12 {main}
+ERROR - 2017-02-06T18:26:31-05:00 - exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'my`-`table.active' in 'where clause'' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:239
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php(239): PDOStatement->execute()
+#1 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#6 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#7 [internal function]: {closure}('my-table')
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#11 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#12 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#13 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#14 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#15 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S22 - 1054 - Unknown column 'my`-`table.active' in 'where clause')' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#6 [internal function]: {closure}('my-table')
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#12 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#13 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#14 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#15 {main}
+
+Next exception 'RuntimeException' with message 'This query failed: SELECT `my-table`.`id` AS `id`, `my-table`.`active` AS `active`, `my-table`.`first_name` AS `first_name` FROM `my-table` WHERE `my``-``table`.`active` IN ('1', '2') ORDER BY `id` ASC LIMIT 200 OFFSET 0' in /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php:182
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#3 [internal function]: {closure}('my-table')
+#4 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#6 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#10 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#11 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#12 {main}
+ERROR - 2017-02-06T18:26:50-05:00 - exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'my`-`table.active' in 'where clause'' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:239
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php(239): PDOStatement->execute()
+#1 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#6 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#7 [internal function]: {closure}('my-table')
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#11 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#12 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#13 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#14 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#15 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S22 - 1054 - Unknown column 'my`-`table.active' in 'where clause')' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#6 [internal function]: {closure}('my-table')
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#12 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#13 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#14 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#15 {main}
+
+Next exception 'RuntimeException' with message 'This query failed: SELECT `my-table`.`id` AS `id`, `my-table`.`active` AS `active`, `my-table`.`first_name` AS `first_name` FROM `my-table` WHERE `my``-``table`.`active` IN ('1', '2') ORDER BY `id` ASC LIMIT 200 OFFSET 0' in /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php:182
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#3 [internal function]: {closure}('my-table')
+#4 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#6 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#10 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#11 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#12 {main}
+ERROR - 2017-02-06T18:26:57-05:00 - exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'my`-`table.active' in 'where clause'' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:239
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php(239): PDOStatement->execute()
+#1 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#6 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#7 [internal function]: {closure}('my-table')
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#11 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#12 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#13 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#14 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#15 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S22 - 1054 - Unknown column 'my`-`table.active' in 'where clause')' in /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/BaseTableGateway.php(566): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php(179): Directus\Db\TableGateway\BaseTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#5 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#6 [internal function]: {closure}('my-table')
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#12 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#13 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#14 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#15 {main}
+
+Next exception 'RuntimeException' with message 'This query failed: SELECT `my-table`.`id` AS `id`, `my-table`.`active` AS `active`, `my-table`.`first_name` AS `first_name` FROM `my-table` WHERE `my``-``table`.`active` IN ('1', '2') ORDER BY `id` ASC LIMIT 200 OFFSET 0' in /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/AclAwareTableGateway.php:182
+Stack trace:
+#0 /home2/laura2016/public_html/portal/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Directus\Db\TableGateway\AclAwareTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#1 /home2/laura2016/public_html/portal/api/core/Directus/Db/TableGateway/RelationalTableGateway.php(721): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#2 /home2/laura2016/public_html/portal/api/api.php(916): Directus\Db\TableGateway\RelationalTableGateway->getEntries(Array)
+#3 [internal function]: {closure}('my-table')
+#4 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1305): Slim\Route->dispatch()
+#6 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /home2/laura2016/public_html/portal/api/core/Directus/Slim/CorsMiddleware.php(22): Slim\Middleware\MethodOverride->call()
+#9 /home2/laura2016/public_html/portal/vendor/slim/slim/Slim/Slim.php(1254): Directus\Slim\CorsMiddleware->call()
+#10 /home2/laura2016/public_html/portal/api/core/Directus/Application/Application.php(74): Slim\Slim->run()
+#11 /home2/laura2016/public_html/portal/api/api.php(1887): Directus\Application\Application->run()
+#12 {main}
