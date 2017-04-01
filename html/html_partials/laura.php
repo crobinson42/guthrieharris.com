@@ -10,7 +10,7 @@
             <!-- promo real estate agent's block line divider here -->
             <div class="block-separator clearfix"></div>                                            <div class="col-sm-4 col-ms-4">
               <!-- edit real estate agent's promo block image here -->
-                <img class="img-responsive block-img" src="http://placehold.it/282x423/306255/ffffff?text=Pic of Laura!" alt="" />
+                <img class="img-responsive block-img" src="/img/laura.jpg" alt="" />
             </div>
             <div class="col-sm-8 col-ms-8">
                 <!-- real estate agent's promo block text starts here -->
@@ -19,9 +19,10 @@
                     <h3>An Experienced Real Estate Pro Who Works for You!</h3>
                     <br/>
                     <!-- edit real estate agent's promo block paragraph text here -->
-                    <p>Content & Bio for Laura... filler.. adipiscing elit. Sed nibh orci, commodo at mi non, ullamcorper elementum mauris. Fusce posuere sodales erat sed posuere. Integer sollicitudin, sem nec lobortis hendrerit, risus ante venenatis lacus, ut imperdiet ipsum ipsum ac arcu. Nunc sodales egestas tortor, id dapibus urna vulputate ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non odio sem. Proin id nunc cursus, tempus felis eu, accumsan felis. Donec commodo libero est, at lobortis ipsum congue ut.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh orci, commodo at mi non, ullamcorper elementum mauris. Fusce posuere sodales erat sed posuere. Integer sollicitudin, sem nec lobortis hendrerit, risus ante venenatis lacus, ut imperdiet ipsum ipsum.</p>
-                    <img style="float: left;" src="http://placehold.it/260x84/ffffff/306255?text=**Signature*" alt="" />
+                    <p>I have been very fortunate to be able to have a business I am passionate about.  I specialize in Grass Valley, Nevada City, Penn Valley, Browns Valley, Brownsville, Dobbins, and the Oregon House real estate markets.  My goals for each and every client is to provide a level of service that exceeds all of their expectations.  I don’t just sell real estate, I help people to facilitate their dreams of home ownership.</p>
+                    <p>As a full service Grass Valley, Nevada City, Penn Valley, Browns Valley, Brownsville, Dobbins, and Oregon House real estate professional, I work with buyers, sellers and investors in real estate transactions spanning all of the price ranges and property types.</p>
+                    <p>I am just a hardworking, big dreaming, small town girl who loves to see the smiles on the faces of my clients!</p>
+                    <img style="float: left;" src="/img/laura_signature.png" alt="" />
                 </div>
             </div>
 
@@ -31,24 +32,24 @@
 <!-- /end promo text block -->
 
 <!-- awards and associations logo block starts here -->
-<div class="wide-block">
+<div class="wide-block" style="background-color:white; border-bottom: 2px solid grey;">
     <div class="awards-block">
-        <div class="row">
+        <div class="row awards-row">
             <div class="col-sm-3 col-ms-3">
                 <!-- edit logo #1 here -->
-                <img src="img/award1.jpg" alt="" />
+                <img src="img/award_6.jpg" alt="" />
           </div>
             <div class="col-sm-3 col-ms-3">
                 <!-- edit logo #2 here -->
-                <img src="img/award2.jpg" alt="" />
+                <img src="img/award_2.jpg" alt="" />
           </div>
             <div class="col-sm-3 col-ms-3">
                 <!-- edit logo #3 here -->
-                <img src="img/award3.jpg" alt="" />
+                <img src="img/award_7.jpg" alt="" />
           </div>
             <div class="col-sm-3 col-ms-3">
                 <!-- edit logo #4 here -->
-                <img src="img/award4.jpg" alt="" />
+                <img src="img/award_8.jpg" alt="" />
             </div>
         </div>
     </div>

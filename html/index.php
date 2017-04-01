@@ -33,13 +33,13 @@
                 <div id="header">
                     <div class="inner">
 
-                         <!-- turn top notification bar on here by removing this comment -->
+                         <!-- turn top notification bar on/off w/ .hidden class -->
 
-                        <div class="notify-bar">
+                        <div class="notify-bar hidden">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-11">
-                                        <p>Laura is awesome... but her office isn't open just yet!</p>
+                                        <p>Look for some great property or interest in selling!</p>
                                     </div>
                                     <div class="col-md-1"><a href="#" class="notify-close"><i class="icon-remove-sign"></i></a></div>
                                 </div>
@@ -104,38 +104,38 @@
                         <div class="fullwidthbanner">
                             <ul>
                                 <!-- slide 1 -->
-                                <li class="slide1" data-transition="slotzoom-horizontal" data-slotamount="5"  data-masterspeed="300">
+                                <li class="slide1" data-transition="slotzoom-horizontal" data-slotamount="1"  data-masterspeed="300">
                                     <!-- slide 1 image -->
-                                    <img alt="" src="img/slide1a.jpg" />
+                                    <img style="" alt="" src="img/carousel1.jpg" />
                                     <!-- slide 1 caption 1 parameters -->
                                     <div class="caption sft" data-x="10" data-y="380" data-speed="2500" data-start="1000" data-easing="easeInBack">
                                         <!-- slide 1 caption 1 -->
-                                        <p class="cap-1">1234 Nice House Lane<br />
+                                        <p class="cap-1">561 Elbert Ct<br />
                                             <span class="price">$535,000</span>
                                         </p>
                                     </div>
                                 </li>
                                 <!-- slide 2 -->
-                                <li class="slide2" data-transition="slotzoom-horizontal" data-slotamount="5"  data-masterspeed="300">
+                                <li class="slide2" data-transition="slotzoom-horizontal" data-slotamount="2"  data-masterspeed="300">
                                     <!-- slide 2 image -->
-                                    <img alt="" src="img/slide2a.jpg" />
+                                    <img alt="" src="img/carousel2.jpg" />
                                     <!-- slide 2 caption 1 parameters -->
                                     <div class="caption sft" data-x="10" data-y="380" data-speed="2500" data-start="1000" data-easing="easeInBack">
                                         <!-- slide 2 caption 1 -->
-                                        <p class="cap-1">321 Kaboom Crest Circle<br />
+                                        <p class="cap-1">7445 Crestshire Ln<br />
                                             <span class="price">$689,000</span>
                                         </p>
                                     </div>
                                 </li>
                                 <!-- slide 3 -->
-                                <li class="slide2" data-transition="slotzoom-horizontal" data-slotamount="5"  data-masterspeed="300">
+                                <li class="slide2" data-transition="slotzoom-horizontal" data-slotamount="4"  data-masterspeed="300">
                                     <!-- slide 3 image -->
-                                    <img alt="" src="img/slide3a.jpg" />
+                                    <img alt="" src="img/carousel3.jpg" />
                                     <!-- slide 3 caption 1 parameters -->
                                     <div class="caption sft" data-x="10" data-y="380" data-speed="2500" data-start="1000" data-easing="easeInBack">
                                         <!-- slide 3 caption 1 -->
-                                        <p class="cap-1">1009 Bang Drive<br />
-                                            <span class="price">$379,500</span>
+                                        <p class="cap-1">1009 Naples Drive<br />
+                                            <span class="price">$579,500</span>
                                         </p>
                                     </div>
                                 </li>
@@ -173,12 +173,12 @@ include './html_partials/service_areas.php';
                                 <div class="bottom-contact">
                                     <div class="row">
                                         <div class="col-md-8 col-sm-8">
-                                            <form role="form" id="validForm">
+                                            <form data-form="contact" role="form" id="validForm">
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" id="inputName" placeholder="Name">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" id="inputName2" placeholder="Name">
+                                                    <input type="text" class="form-control" id="inputName2" placeholder="Phone">
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="email" class="form-control" id="inputEmail" placeholder="Email">
@@ -187,20 +187,12 @@ include './html_partials/service_areas.php';
                                                     <textarea id="textarea" class="form-control" rows="3"></textarea>
                                                 </div>
 
-                                                <!-- turn captcha on here by removing this comment
-
-                                                <?php
-                                                require_once('config.php');
-                                                require_once('recaptchalib.php');
-                                                if($use_recaptcha === true){
-                                                echo recaptcha_get_html($publickey);
-                                                }
-                                                ?>
-
-                                                -->
-
                                                 <div id="result"></div>
-                                                <input type="submit" value="Submit" class="btn btn-primary submit styler_bg_color">
+                                                <div id="contactSubmitContainer">
+                                                    <button disabled="true" class="btn btn-primary submit styler_bg_color">Submit</button>
+                                                </div>
+
+                                                <p class="text-muted" id="robotMessage">Hover your clicker over the contact form to verify you're human :-)</p>
                                             </form>
                                         </div>
                                         <div class="col-md-4 col-sm-4">
@@ -299,6 +291,7 @@ include './html_partials/service_areas.php';
         <!-- /end style switcher -->
 
 		<!-- scripting (at the bottom for faster loading) -->
+        <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
         <script type="text/javascript" src="js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
         <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1.js"></script>

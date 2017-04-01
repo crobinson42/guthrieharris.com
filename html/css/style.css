@@ -65,6 +65,10 @@ h2 {
     overflow:hidden;
 }
 
+.fullwidthbanner img {
+    top: -200px;
+}
+
 #container {
     width:100%;
     min-height:100%;
@@ -2335,6 +2339,15 @@ form {
 #awards-slider.owl-theme .owl-controls {
     margin-top: 0 !important;
 }
+
+.awards-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    opacity: .2;
+}
+
 .faq-blocks {
     margin-bottom: 30px;
 }
